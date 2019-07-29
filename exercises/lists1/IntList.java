@@ -6,27 +6,51 @@ public class IntList {
 		first = f;
 		rest = r;
 	}
-
-	/** Return the size of the list using... recursion! */
-	public int size() {
-		return 0;
+   public IntList() {
 	}
 
-	/** Return the size of the list using no recursion! */
-	public int iterativeSize() {
-		return 0;
-	}
 
-	/** Returns the ith value in this list.*/
-	public int get(int i) {
-		return 0;
-	}
+	
+    /** Returns an IntList identical to L, but with
+      * each element incremented by x. L is not allowed
+      * to change. */
+    public static IntList incrList(IntList L, int x) {
+        /* Your code here. */
+        IntList R= null;
+		IntList last= null;
 
-	public static void main(String[] args) {
-		IntList L = new IntList(15, null);
-		L = new IntList(10, L);
-		L = new IntList(5, L);
+		while(L != null){
+			IntList newItem = new IntList();
+			newItem.first = L.first + x;
+			if(R == null){
+				R = newItem;
+			}else{
+				last.rest = newItem;
+			}
+			last = newItem;
+			L = L.rest;
+		}
+		return R;        
+    }
 
-		System.out.println(L.iterativeSize());
-	}
+    /** Returns an IntList identical to L, but with
+      * each element incremented by x. Not allowed to use
+      * the 'new' keyword. */
+   
+      
+    public static void main(String[] args) {
+        IntList L = new IntList(5, null);
+        L.rest = new IntList(7, null);
+        L.rest.rest = new IntList(9, null);
+       
+       
+
+        
+
+        
+       
+        System.out.println(incrList(L, 3));
+               
+    }
+
 } 
