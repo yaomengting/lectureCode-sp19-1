@@ -6,8 +6,12 @@ public class IntList {
 		first = f;
 		rest = r;
 	}
-   public IntList() {
-	}
+   public int size(){
+	   if(rest == null){
+		   return 1;
+	   }
+	   return 1 + this.rest.size();
+   }
 
 
 	
@@ -60,7 +64,7 @@ public class IntList {
        
         System.out.println(incrList(L, 3));
 		System.out.println(dincrList(L, 3));
-               
+        System.out.println(L.size());     
     }
 
 } 
