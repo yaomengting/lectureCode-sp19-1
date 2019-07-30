@@ -37,12 +37,14 @@ public class IntList {
       * each element incremented by x. Not allowed to use
       * the 'new' keyword. */
     public static IntList dincrList(IntList L, int x) {
-        while(L != null){
-			L.first -= x;
-			L = L.rest;
+		IntList C = L;
+        while(C != null){
+			C.first -= x;
+			C = C.rest;
 		}
 		/* Your code here. */
         return L;
+	
     }
       
     public static void main(String[] args) {
