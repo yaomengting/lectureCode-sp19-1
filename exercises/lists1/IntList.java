@@ -13,6 +13,24 @@ public class IntList {
 	   return 1 + this.rest.size();
    }
 
+	public int iterativesize(){
+		IntList P = this;
+		int size = 0;
+		while(P!= null){
+			size++;
+			P = P.rest;
+		}
+
+		return size;
+	}
+
+	public int get(int i){
+		while(n>0 && L != null){
+			n--;
+			L = L.rest;
+		}
+		return L.first;
+	}
 
 	
     /** Returns an IntList identical to L, but with
@@ -64,7 +82,9 @@ public class IntList {
        
         System.out.println(incrList(L, 3));
 		System.out.println(dincrList(L, 3));
-        System.out.println(L.size());     
+        System.out.println(L.size());  
+		System.out.println(L.get(2));  
+
     }
 
 } 
