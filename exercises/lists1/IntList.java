@@ -23,13 +23,21 @@ public class IntList {
 
 		return size;
 	}
-
+	/** iterative way to get the ith item of first value */
 	public int get(int i){
 		while(n>0 && L != null){
 			n--;
 			L = L.rest;
 		}
 		return L.first;
+	}
+	/** recursion to get the ith item of first value */
+	public int get(int i){
+		if(i == 0){
+			return first;
+		}
+
+		return rest.get(i-1);
 	}
 
 	
